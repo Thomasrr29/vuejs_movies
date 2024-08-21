@@ -5,23 +5,28 @@
         <input
           type="text"
           :required="true"
+          v-model="message"
+          @input="emitMessage"
         />
         <span>Search movie</span>
       </div>
     </form>
     <div class="container-image-banner">
-      <img :src="imageUrl" alt="" />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-/**Vue imports */
-import { ref } from "vue";
-/**Assets imports */
-import headerImg from "@/assets/images/header-img.svg";
+import { ref, defineEmits} from 'vue';
 
-const imageUrl = ref(headerImg);
+  let message = ref("")
+
+  const emit = defineEmits(['update-message'])
+
+  function emitMessage(){
+    emit('update-message', message.value)
+  }
+
 </script>
 
 <style scoped lang="scss">

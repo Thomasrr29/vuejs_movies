@@ -1,15 +1,7 @@
 <template>
-  <BannerComponent /> 
-
+  <router-view></router-view>
 </template>
 
-
 <script setup lang="ts">
-import BannerComponent from '@/components/banner/Banner.vue'
 
 </script>
-
-
-<style>
-
-</style>
